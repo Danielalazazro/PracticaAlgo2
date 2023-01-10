@@ -1,4 +1,4 @@
-# Install script for directory: /home/daniela/Escritorio/Algoritmo y Programacion 2/TpsJuarez
+# Install script for directory: /home/daniela/Escritorio/Algoritmo y Programacion 2/Trabajos Practicos de JUarez/PracticaAlgo2/TpsJuarez/Tp1
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/daniela/Escritorio/Algoritmo y Programacion 2/TpsJuarez/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/daniela/Escritorio/Algoritmo y Programacion 2/Trabajos Practicos de JUarez/PracticaAlgo2/TpsJuarez/Tp1/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
