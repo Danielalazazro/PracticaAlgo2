@@ -1,3 +1,3 @@
-/home/daniela/Escritorio/Algoritmo y Programacion 2/Trabajos Practicos de JUarez/Tp2Juarez/cmake-build-debug/CMakeFiles/Tp2Juarez.dir
-/home/daniela/Escritorio/Algoritmo y Programacion 2/Trabajos Practicos de JUarez/Tp2Juarez/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/daniela/Escritorio/Algoritmo y Programacion 2/Trabajos Practicos de JUarez/Tp2Juarez/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/daniela/Escritorio/Algoritmo y Programacion 2/Trabajos Practicos de JUarez/PracticaAlgo2/TpsJuarez/Tp2Juarez/cmake-build-debug/CMakeFiles/Tp2Juarez.dir
+/home/daniela/Escritorio/Algoritmo y Programacion 2/Trabajos Practicos de JUarez/PracticaAlgo2/TpsJuarez/Tp2Juarez/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/daniela/Escritorio/Algoritmo y Programacion 2/Trabajos Practicos de JUarez/PracticaAlgo2/TpsJuarez/Tp2Juarez/cmake-build-debug/CMakeFiles/rebuild_cache.dir

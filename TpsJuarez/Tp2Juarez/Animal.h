@@ -86,8 +86,8 @@ public:
         std::cout<<"Estado de hambre: "<<personalidadAnimal->getPorcentajeHambre()<<std::endl;
 
     }
-    ~Animal(){
-        delete this->personalidadAnimal;
+    virtual ~Animal(){
+
     }
 };
 #endif //TP2JUAREZ_ANIMAL_H

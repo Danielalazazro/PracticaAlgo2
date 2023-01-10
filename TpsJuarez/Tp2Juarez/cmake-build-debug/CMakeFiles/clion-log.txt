@@ -1,4 +1,4 @@
-/home/daniela/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/222.3739.54/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/daniela/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/222.3739.54/bin/ninja/linux/ninja -G Ninja -S "/home/daniela/Escritorio/Algoritmo y Programacion 2/Trabajos Practicos de JUarez/Tp2Juarez" -B "/home/daniela/Escritorio/Algoritmo y Programacion 2/Trabajos Practicos de JUarez/Tp2Juarez/cmake-build-debug"
+/home/daniela/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/222.3739.54/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/daniela/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/222.3739.54/bin/ninja/linux/ninja -G Ninja -S "/home/daniela/Escritorio/Algoritmo y Programacion 2/Trabajos Practicos de JUarez/PracticaAlgo2/TpsJuarez/Tp2Juarez" -B "/home/daniela/Escritorio/Algoritmo y Programacion 2/Trabajos Practicos de JUarez/PracticaAlgo2/TpsJuarez/Tp2Juarez/cmake-build-debug"
 -- The C compiler identification is GNU 11.2.0
 -- The CXX compiler identification is GNU 11.2.0
 -- Detecting C compiler ABI info
@@ -13,4 +13,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/daniela/Escritorio/Algoritmo y Programacion 2/Trabajos Practicos de JUarez/Tp2Juarez/cmake-build-debug
+-- Build files have been written to: /home/daniela/Escritorio/Algoritmo y Programacion 2/Trabajos Practicos de JUarez/PracticaAlgo2/TpsJuarez/Tp2Juarez/cmake-build-debug

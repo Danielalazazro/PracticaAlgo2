@@ -9,7 +9,7 @@ class Personalidad{
 protected:
     int porcentajeHambre;
     int porcentajeBañado;
-    //std::string comportamineto;
+
 public:
     Personalidad(){
         this->porcentajeBañado = 100;
