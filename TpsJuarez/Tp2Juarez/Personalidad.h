@@ -39,6 +39,6 @@ public:
     void bañar() {
         this->porcentajeBañado = 100;
     }
-
+    virtual ~Personalidad(){}
 };
 #endif //TP2JUAREZ_PERSONALIDAD_H

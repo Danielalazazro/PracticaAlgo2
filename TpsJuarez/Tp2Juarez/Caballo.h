@@ -22,6 +22,9 @@ public:
 
         std::cout<<"Me bañaron y soy un caballo"<<std::endl;
     }
+    virtual ~Caballo(){
+        //delete this->personalidadAnimal;
+    }
 
 };
 #endif //TP2JUAREZ_CABALLO_H

@@ -33,5 +33,6 @@ public:
     int getPorcentajeBañado(){
         return this->porcentajeBañado;
     }
+    virtual ~Sociable(){}
 };
 #endif //TP2JUAREZ_SOCIABLE_H

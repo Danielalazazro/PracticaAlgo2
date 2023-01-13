@@ -18,6 +18,10 @@
 #include "Jugueton.h"
 #include "Dormilon.h"
 #include "Travieso.h"
+static const int minimoMetrosCuadrados = 2;
+static const int volorMedioCuadrados = 10;
+static const int metrosCuadradosGrande = 20;
+static const int metrosCuadradosGigante = 50;
 class RescateDeAnimales{
 private:
     Lista<Animal*>* animales;
@@ -49,6 +53,65 @@ public:
         return nuevaPersonalidad;
 
     }
+    void agregarAnimal(Animal* unAnimal){
+        bool agregadoAnimal = false;
+        animales->iniciarCursor();
+        if(animales->contarElemntos() == 0){
+            animales->agregar(unAnimal);
+            return;
+        }
+        //probar acon obtener cursor, con la modificarcion de obtener cursor
+
+        while (animales->avanzarCursor() && !agregadoAnimal){
+            Animal * animalActual = animales->obtenerCursor();
+            if(animalActual->getNombre() != unAnimal->getNombre() ){
+                animales->agregar(unAnimal);
+                agregadoAnimal = true;
+            }
+        }
+    }
+
+    void registrarAnimal(std::string nombreAnimal, int edadAnimal, std::string tamañoAnimal,
+                    std::string especieAnimal,
+                    std::string persinalidadAnimal) {
+        Personalidad* unaPersonalidad = obtenerPersonalidad(persinalidadAnimal);
+        if(especieAnimal == "P" ){
+            Perro* perro = new Perro(nombreAnimal,edadAnimal,tamañoAnimal,especieAnimal, unaPersonalidad);
+            agregarAnimal(perro);
+            //delete perro;
+        }
+        else if (especieAnimal == "G"){
+            Gato* gato = new Gato(nombreAnimal, edadAnimal, tamañoAnimal, especieAnimal, unaPersonalidad);
+            agregarAnimal(gato);
+            //delete gato;
+        }
+        else if(especieAnimal == "E"){
+            Erizo* erizo = new Erizo(nombreAnimal, edadAnimal,tamañoAnimal,especieAnimal, unaPersonalidad);
+            agregarAnimal(erizo);
+            //delete erizo;
+        }
+        else if(especieAnimal == "C"){
+            Caballo* caballo = new Caballo(nombreAnimal, edadAnimal, tamañoAnimal, especieAnimal, unaPersonalidad );
+            agregarAnimal(caballo);
+            //delete caballo;
+        }
+        else if(especieAnimal == "R"){
+            Roedor* roedor = new Roedor(nombreAnimal, edadAnimal, tamañoAnimal, especieAnimal, unaPersonalidad);
+            agregarAnimal(roedor);
+            //delete roedor;
+        }
+        else if(especieAnimal == "O"){
+            Conejo* conejo = new Conejo(nombreAnimal, edadAnimal, tamañoAnimal, especieAnimal, unaPersonalidad);
+            agregarAnimal(conejo);
+            //delete conejo;
+        }
+        else if(especieAnimal == "L"){
+            Lagartija* lagartija = new Lagartija(nombreAnimal, edadAnimal, tamañoAnimal, especieAnimal, unaPersonalidad);
+            agregarAnimal(lagartija);
+            //delete lagartija;
+        }
+    }
+
     void leerArchivo() {
         std::ifstream archivo("animales.csv");
         if (!archivo.is_open()) {
@@ -68,45 +131,8 @@ public:
             getline(archivo, tamaño, ',');
             getline(archivo, especie, ',');
             getline(archivo, personalidad);
-            Personalidad* unaPersonalidad = obtenerPersonalidad(personalidad);
-            if(especie == "P" ){
+            registrarAnimal(nombre, std::stoi(edad), tamaño, especie,personalidad);
 
-
-                Perro* perro = new Perro(nombre,std::stoi(edad),tamaño,especie, unaPersonalidad);
-                animales->agregar(perro);
-
-
-            }
-            else if (especie == "G"){
-                Gato* gato = new Gato(nombre, std::stoi(edad), tamaño, especie, unaPersonalidad);
-                animales->agregar(gato);
-
-            }
-            else if(especie == "E"){
-                Erizo* erizo = new Erizo(nombre, std::stoi(edad),tamaño,especie, unaPersonalidad);
-                animales->agregar(erizo);
-
-            }
-            else if(especie == "C"){
-                Caballo* caballo = new Caballo(nombre, std::stoi(edad), tamaño, especie, unaPersonalidad );
-                animales->agregar(caballo);
-
-            }
-            else if(especie == "R"){
-                Roedor* roedor = new Roedor(nombre, std::stoi(edad), tamaño, especie, unaPersonalidad);
-                animales->agregar(roedor);
-
-            }
-            else if(especie == "O"){
-                Conejo* conejo = new Conejo(nombre, std::stoi(edad), tamaño, especie, unaPersonalidad);
-                animales->agregar(conejo);
-
-            }
-            else if(especie == "L"){
-                Lagartija* lagartija = new Lagartija(nombre, std::stoi(edad), tamaño, especie, unaPersonalidad);
-                animales->agregar(lagartija);
-
-            }
         }
     }
     void listar(){
@@ -151,52 +177,9 @@ public:
         std::cin>>personalidad;
         std::cout<<"Ingrese la especie del nuevo animal a ingresar: "<<std::endl;
         std::cin>>especie;
-        if(especie == "P"){
-            Perro* unPerro = new Perro(nombreNuevo, edad, tamaño, especie, obtenerPersonalidad(personalidad));
-            agregarAnimal(unPerro);
+        registrarAnimal( nombreNuevo, edad,  tamaño,
+                 especie,personalidad);
 
-        }
-        else if(especie == "G"){
-            Gato* gato = new Gato(nombreNuevo, edad, tamaño, especie, obtenerPersonalidad(personalidad));
-            agregarAnimal(gato);
-
-        }
-        else if(especie == "C"){
-            Caballo* caballo = new Caballo(nombreNuevo,edad, tamaño,especie, obtenerPersonalidad(personalidad));
-            agregarAnimal(caballo);
-
-        }
-        else if(especie == "R"){
-            Roedor* roedor = new Roedor(nombreNuevo, edad, tamaño, especie, obtenerPersonalidad(personalidad));
-            agregarAnimal(roedor);
-
-        }
-        else if(especie == "O"){
-            Conejo* conejo = new Conejo(nombreNuevo, edad, tamaño, especie, obtenerPersonalidad(personalidad));
-            agregarAnimal(conejo);
-
-        }
-        else if(especie == "L"){
-            Lagartija* lagartija = new Lagartija(nombreNuevo, edad, tamaño, especie, obtenerPersonalidad(personalidad));
-            agregarAnimal(lagartija);
-
-        }
-        else if(especie == "E"){
-            Erizo* erizo = new Erizo(nombreNuevo, edad, tamaño, especie, obtenerPersonalidad(personalidad));
-            agregarAnimal(erizo);
-
-        }
-    }
-    void agregarAnimal(Animal* unAnimal){
-        bool agregadoAnimal = false;
-        animales->iniciarCursor();
-        while (animales->avanzarCursor()){
-            Animal * animalActual = animales->obtenerCursor();
-            if(animalActual->getNombre() != unAnimal->getNombre() && !agregadoAnimal ){
-                animales->agregar(unAnimal);
-                agregadoAnimal = true;
-            }
-        }
     }
 
     void buscarAnimal(std::string nombreAnimal){
@@ -295,8 +278,9 @@ public:
         std::cout << "Desea elegir este animal(s/n)?: " << std::endl;
         std::cin>>eleccionElegida;
         if (eleccionElegida == "s") {
-            std::cout<<"Se elimino de la lista de animales en adopcion a: "<<animal->getNombre();
+            std::cout<<"Se elimino de la lista de animales en adopcion a: "<<animal->getNombre()<<std::endl;
             animales->remover(posicionAnimal);
+
         }
     }
 
@@ -322,12 +306,10 @@ public:
             while (animales->avanzarCursor()){
                 Animal* unAnimal = animales->obtenerCursor();
                 j++;
-                if(unAnimal->getTamaño() == "pequeño"){
+                if(unAnimal->getTamaño() == "pequeño" || unAnimal->getTamaño() == "diminuto"){
                     removerAnimaleImprimir(eleccion,j,unAnimal);
                 }
-                else if(unAnimal->getTamaño() != "mediano" && unAnimal->getTamaño() != "gigante" && unAnimal->getTamaño() != "gigante"){
-                    removerAnimaleImprimir(eleccion,j,unAnimal);
-                }
+
             }
         }
         else if(cantidadDeEspacio >= 10 && cantidadDeEspacio < 20){
@@ -336,10 +318,7 @@ public:
             while (animales->avanzarCursor()){
                 Animal* animal = animales->obtenerCursor();
                 k++;
-                if(animal->getTamaño() == "mediano"){
-                    removerAnimaleImprimir(eleccion,k,animal);
-                }
-                else if(animal->getTamaño() != "mediano" && animal->getTamaño() != "grande" && animal->getTamaño() != "gigante"){
+                if(animal->getTamaño() == "mediano" || animal->getTamaño() == "pequeño" || animal->getTamaño() == "diminuto" ){
                     removerAnimaleImprimir(eleccion,k,animal);
                 }
 
@@ -351,12 +330,8 @@ public:
             while (animales->avanzarCursor()){
                 Animal* esteAnimal = animales->obtenerCursor();
                 l++;
-                if(esteAnimal->getTamaño() == "grande"){
+                if(esteAnimal->getTamaño() == "grande" || esteAnimal->getTamaño() == "mediano" || esteAnimal->getTamaño() == "pequeño" || esteAnimal->getTamaño() == "diminuto"){
                     std::cout<<"Este animal seria el adecuado para su espacio "<<std::endl;
-                    removerAnimaleImprimir(eleccion,l,esteAnimal);
-                }
-                else if(esteAnimal->getTamaño() != "grande" && esteAnimal->getTamaño() != "gigante"){
-                    std::cout<<"Puede adoptar a cualquier animal de la lista de adopcion  que no sean gigante: "<<std::endl;
                     removerAnimaleImprimir(eleccion,l,esteAnimal);
                 }
             }
@@ -471,7 +446,6 @@ public:
             opcionesDelMenuYincrementoDeHambreYdecrmetoBañado();
             std::cin >> numero;
             verificarNumero(numero);
-
             if (numero == 6) {
                 guardarYsalir();
                 std::cout << "Gracias por participar en el rescate de animales y la adopcion" << std::endl;

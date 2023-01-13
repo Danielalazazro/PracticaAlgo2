@@ -87,7 +87,7 @@ public:
 
     }
     virtual ~Animal(){
-
+        delete this->personalidadAnimal;
     }
 };
 #endif //TP2JUAREZ_ANIMAL_H

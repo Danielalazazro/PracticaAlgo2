@@ -27,6 +27,6 @@ public:
     void disminurPocentajeBañado(){
         this->personalidadAnimal->bañar();
     }
-
+    virtual ~Gato(){}
 };
 #endif //TP2JUAREZ_GATO_H

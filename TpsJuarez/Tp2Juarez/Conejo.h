@@ -22,6 +22,8 @@ public:
         Animal::bañar();
         std::cout<<"Soy un conjejo y me bañaron"<<std::endl;
     }
-
+    virtual ~Conejo(){
+        //delete this->personalidadAnimal;
+    }
 };
 #endif //TP2JUAREZ_CONEJO_H

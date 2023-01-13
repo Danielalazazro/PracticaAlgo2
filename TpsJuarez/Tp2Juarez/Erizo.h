@@ -22,6 +22,7 @@ public:
         Animal::bañar();
         std::cout<<"Soy un Erizo y me bañaron"<<std::endl;
     }
+    virtual ~Erizo(){}
 
 };
 #endif //TP2JUAREZ_ERIZO_H

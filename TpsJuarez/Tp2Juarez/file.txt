@@ -1,2 +1,2 @@
-g++ -Wall -Werror -Wconversion *.cpp -osalida
+g++ -Wall -Werror -Wconversion *.cpp -o salida
 ./salida

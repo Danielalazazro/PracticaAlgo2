@@ -90,18 +90,22 @@ template<class T> unsigned int Lista<T>::contarElemntos() {
 }
 template<class T> void Lista<T>::agregar(T elemnto, unsigned int posicion) {
     //agrega adelante de la lista
-    if ((posicion > 0) && (posicion <= this->tamanio + 1)) {
+    if ((posicion > 0) && (posicion <= this->tamanio + 1 )) {
         Nodo<T> *nuevo = new Nodo<T>(elemnto);
         if (posicion == 1) {
             nuevo->cambiarSIguiente(this->primero);
             this->primero = nuevo;
+
         } else {
             Nodo<T> *anterior = this->obtenerNodo(posicion - 1);
             nuevo->cambiarSIguiente(anterior->obtenerSiguiente());
             anterior->cambiarSIguiente(nuevo);
+
         }
         this->tamanio++;
+        //delete nuevo;
         /* cualquier recorrido actual queda invalido*/
+        this->iniciarCursor();
     }
 }
 template<class T> T Lista<T>::obtener(unsigned int posicion) {
@@ -123,6 +127,10 @@ template<class T> void Lista<T>::remover(unsigned int posicion) {
             anterior->cambiarSIguiente(removido->obtenerSiguiente());
 
         }
+        delete removido;
+        this->tamanio--;
+
+        this->iniciarCursor();
     }
 }
 template<class T> Lista<T>:: ~Lista() {
@@ -144,6 +152,7 @@ template<class T> void Lista<T>::iniciarCursor() {
 }
 template<class T> T Lista<T>::obtenerCursor() {
     T elemento;
+    //agrgar un if cuando a sea null colocar null
     if(this->cursor != NULL){
         elemento = this->cursor->obtenerDato();
     }

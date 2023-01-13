@@ -23,6 +23,7 @@ public:
         comportamiento = "dormilon";
         return comportamiento;
     }
+    virtual ~Dormilon(){}
 
 };
 #endif //TP2JUAREZ_DORMILON_H

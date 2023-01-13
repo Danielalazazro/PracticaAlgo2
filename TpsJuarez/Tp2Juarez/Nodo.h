@@ -29,6 +29,7 @@ public:
     void cambiarDato( T nuevoDato){
         this->dato = nuevoDato;
     }
+    ~Nodo(){}
 };
 
 #endif //TP2JUAREZ_NODO_H

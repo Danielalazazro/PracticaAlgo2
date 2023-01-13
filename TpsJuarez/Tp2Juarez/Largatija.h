@@ -23,6 +23,6 @@ public:
     void disminurPocentajeBañado(){
         this->personalidadAnimal->bañar();
     }
-
+    virtual ~Lagartija(){}
 };
 #endif //TP2JUAREZ_LARGATIJA_H
