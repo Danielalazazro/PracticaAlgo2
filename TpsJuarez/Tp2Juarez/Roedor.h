@@ -25,6 +25,6 @@ public:
     void disminurPocentajeBañado(){
         this->personalidadAnimal->bañar();
     }
-    virtual ~Roedor(){}
+    ~Roedor(){}
 };
 #endif //TP2JUAREZ_ROEDOR_H

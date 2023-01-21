@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "EjerciciosArboles",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "EjerciciosArboles::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-EjerciciosArboles-Debug-4b94f6d7a5ae21954ebe.json",
+					"name" : "EjerciciosArboles",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/daniela/Escritorio/Algoritmo y Programacion 2/Trabajos Practicos de JUarez/PracticaAlgo2/TpsJuarez/TdaArbol/cmake-build-debug",
+		"source" : "/home/daniela/Escritorio/Algoritmo y Programacion 2/Trabajos Practicos de JUarez/PracticaAlgo2/TpsJuarez/TdaArbol"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

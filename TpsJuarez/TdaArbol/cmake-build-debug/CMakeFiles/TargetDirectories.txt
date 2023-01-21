@@ -1,0 +1,3 @@
+/home/daniela/Escritorio/Algoritmo y Programacion 2/Trabajos Practicos de JUarez/PracticaAlgo2/TpsJuarez/TdaArbol/cmake-build-debug/CMakeFiles/EjerciciosArboles.dir
+/home/daniela/Escritorio/Algoritmo y Programacion 2/Trabajos Practicos de JUarez/PracticaAlgo2/TpsJuarez/TdaArbol/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/daniela/Escritorio/Algoritmo y Programacion 2/Trabajos Practicos de JUarez/PracticaAlgo2/TpsJuarez/TdaArbol/cmake-build-debug/CMakeFiles/rebuild_cache.dir

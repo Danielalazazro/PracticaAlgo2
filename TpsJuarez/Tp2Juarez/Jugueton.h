@@ -28,6 +28,6 @@ public:
     int getPorcentajeBañado(){
         return this->porcentajeBañado;
     }
-    virtual ~Jugueton(){}
+    ~Jugueton(){}
 };
 #endif //TP2JUAREZ_JUGUETON_H

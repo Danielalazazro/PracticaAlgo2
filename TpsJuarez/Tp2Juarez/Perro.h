@@ -26,7 +26,7 @@ public:
         this->personalidadAnimal->bañar();
         std::cout<< "Soy un perro y me bañaron"<<std::endl;
     }
-    virtual ~Perro(){}
+    ~Perro(){}
 
 };
 #endif //TP2JUAREZ_PERRO_H

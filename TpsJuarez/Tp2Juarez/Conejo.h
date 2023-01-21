@@ -22,7 +22,7 @@ public:
         Animal::bañar();
         std::cout<<"Soy un conjejo y me bañaron"<<std::endl;
     }
-    virtual ~Conejo(){
+    ~Conejo(){
         //delete this->personalidadAnimal;
     }
 };

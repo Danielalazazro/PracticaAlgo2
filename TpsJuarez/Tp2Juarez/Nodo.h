@@ -29,7 +29,10 @@ public:
     void cambiarDato( T nuevoDato){
         this->dato = nuevoDato;
     }
-    ~Nodo(){}
+    ~Nodo(){
+        // no se hace falta en el caso de que sea int.
+    // delete dato;
+    }
 };
 
 #endif //TP2JUAREZ_NODO_H

@@ -22,7 +22,7 @@ public:
 
         std::cout<<"Me bañaron y soy un caballo"<<std::endl;
     }
-    virtual ~Caballo(){
+    ~Caballo(){
         //delete this->personalidadAnimal;
     }
 

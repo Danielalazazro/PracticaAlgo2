@@ -25,13 +25,12 @@ static const int metrosCuadradosGigante = 50;
 class RescateDeAnimales{
 private:
     Lista<Animal*>* animales;
-    int cantidadTurnos = 0;
-    Personalidad* pesonalidad;
+
 
 public:
     RescateDeAnimales(){
         this->animales = new Lista<Animal*>();
-        this->pesonalidad = NULL;
+
     }
 
 
@@ -273,13 +272,18 @@ public:
         continuarCuidar(numeroCuidar);
     }
 
-    void removerAnimaleImprimir(std::string eleccionElegida, int posicionAnimal,Animal* animal) {
+    void removerAnimaleImprimir(std::string eleccionElegida, int *posicionAnimal,Animal* animal) {
         animal->imprimirDatos();
         std::cout << "Desea elegir este animal(s/n)?: " << std::endl;
         std::cin>>eleccionElegida;
         if (eleccionElegida == "s") {
             std::cout<<"Se elimino de la lista de animales en adopcion a: "<<animal->getNombre()<<std::endl;
-            animales->remover(posicionAnimal);
+            //encapsulo el delete animal dentro de la lista , implica  que los elementos que tienen memoria dinamica
+            animales->remover(*posicionAnimal);
+            delete animal;
+            //lo paso por referencia para que elima la posicion correcta (setear de cero)
+            *posicionAnimal = 0;
+
 
         }
     }
@@ -296,7 +300,7 @@ public:
                 Animal *animalActual = animales->obtenerCursor();
                 i++;
                 if (animalActual->getTamaño() == "diminuto") {
-                    removerAnimaleImprimir(eleccion, i, animalActual);
+                    removerAnimaleImprimir(eleccion, &i, animalActual);
                 }
             }
         }
@@ -307,7 +311,7 @@ public:
                 Animal* unAnimal = animales->obtenerCursor();
                 j++;
                 if(unAnimal->getTamaño() == "pequeño" || unAnimal->getTamaño() == "diminuto"){
-                    removerAnimaleImprimir(eleccion,j,unAnimal);
+                    removerAnimaleImprimir(eleccion,&j,unAnimal);
                 }
 
             }
@@ -319,9 +323,8 @@ public:
                 Animal* animal = animales->obtenerCursor();
                 k++;
                 if(animal->getTamaño() == "mediano" || animal->getTamaño() == "pequeño" || animal->getTamaño() == "diminuto" ){
-                    removerAnimaleImprimir(eleccion,k,animal);
+                    removerAnimaleImprimir(eleccion,&k,animal);
                 }
-
             }
         }
         else if(cantidadDeEspacio >= 20 && cantidadDeEspacio < 50){
@@ -332,7 +335,7 @@ public:
                 l++;
                 if(esteAnimal->getTamaño() == "grande" || esteAnimal->getTamaño() == "mediano" || esteAnimal->getTamaño() == "pequeño" || esteAnimal->getTamaño() == "diminuto"){
                     std::cout<<"Este animal seria el adecuado para su espacio "<<std::endl;
-                    removerAnimaleImprimir(eleccion,l,esteAnimal);
+                    removerAnimaleImprimir(eleccion,&l,esteAnimal);
                 }
             }
         }
@@ -343,10 +346,10 @@ public:
                 Animal* aquelAnimal = animales->obtenerCursor();
                 m++;
                 if(aquelAnimal->getTamaño() == "gigante"){
-                    removerAnimaleImprimir(eleccion,m,aquelAnimal);
+                    removerAnimaleImprimir(eleccion,&m,aquelAnimal);
                 }
                 else if(aquelAnimal->getTamaño() != "gigante"){
-                    removerAnimaleImprimir(eleccion,m,aquelAnimal);
+                    removerAnimaleImprimir(eleccion,&m,aquelAnimal);
                 }
             }
         }
@@ -422,7 +425,7 @@ public:
     void opcionesDelMenuYincrementoDeHambreYdecrmetoBañado() {
         aumnetarHambreDeAnimales();
         disminuirHigineDeAnimales();
-        this->cantidadTurnos++;
+
         std::cout<<"\n1.Listar animales "<<std::endl;
         std::cout<<"2.Rescatar animal "<<std::endl;
         std::cout<<"3.Buscar animal "<<std::endl;
@@ -458,14 +461,15 @@ public:
         menu();
     }
     virtual ~RescateDeAnimales(){
-
         animales->iniciarCursor();
+        //int i = 1;
         while (animales->avanzarCursor()){
+
             Animal* animal = animales->obtenerCursor();
+            animales->remover(1);
             delete animal;
         }
         delete this->animales;
-        
     }
 };
 #endif //TP2JUAREZ_RESCATEDEANIMALES_H

@@ -31,7 +31,7 @@ public:
     int getPorcentajeBañado(){
         return this->porcentajeBañado;
     }
-    virtual ~Travieso(){}
+    ~Travieso(){}
 
 
 };

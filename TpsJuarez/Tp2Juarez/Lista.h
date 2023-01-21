@@ -103,7 +103,6 @@ template<class T> void Lista<T>::agregar(T elemnto, unsigned int posicion) {
 
         }
         this->tamanio++;
-        //delete nuevo;
         /* cualquier recorrido actual queda invalido*/
         this->iniciarCursor();
     }
@@ -127,7 +126,9 @@ template<class T> void Lista<T>::remover(unsigned int posicion) {
             anterior->cambiarSIguiente(removido->obtenerSiguiente());
 
         }
+        //delete removido->obtenerDato();
         delete removido;
+
         this->tamanio--;
 
         this->iniciarCursor();
