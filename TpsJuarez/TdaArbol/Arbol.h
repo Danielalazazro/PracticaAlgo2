@@ -81,7 +81,7 @@ public:
 
             if(padre == NULL){
                 delete arbolAeliminar;
-                //return;
+
             }
             if(orientacion == "I"){
                 padre->izquierdo = NULL;
@@ -95,29 +95,21 @@ public:
     }
 
     void eliminarConUnHijo(Arbol *arbolAeliminar, Arbol *padre, std::string orientacion) {
+        Arbol* nodoReempl = NULL;
+        if(arbolAeliminar->derecha && !arbolAeliminar->izquierdo){
+            nodoReempl = arbolAeliminar->derecha;
+        }
+        else if(!arbolAeliminar->derecha && arbolAeliminar->izquierdo) {
+            nodoReempl = arbolAeliminar->izquierdo;
+        }
+
         if(orientacion == "I"){
-            Arbol* nodoReempl = NULL;
-            if(arbolAeliminar->derecha && !arbolAeliminar->izquierdo){
-                nodoReempl = arbolAeliminar->derecha;
-            }
-            else if(!arbolAeliminar->derecha && arbolAeliminar->izquierdo){
-                nodoReempl = arbolAeliminar->izquierdo;
-            }
-            padre->izquierdo = nodoReempl;
-            // setear los izq y der a null antes de eliminar seria de mas?
-            delete arbolAeliminar;
+            padre->izquierdo= nodoReempl ;
         }
-        else if(orientacion == "D"){
-            Arbol* nodoReempl = NULL;
-            if(arbolAeliminar->derecha && !arbolAeliminar->izquierdo){
-                nodoReempl= arbolAeliminar->derecha;
-            }
-            else if(!arbolAeliminar->derecha && arbolAeliminar->izquierdo){
-                nodoReempl = arbolAeliminar->izquierdo;
-            }
+        else {
             padre->derecha = nodoReempl;
-            delete arbolAeliminar;
         }
+        delete arbolAeliminar;
     }
 
     void eliminarConUnoOsinHijos(Arbol *arbolReempl, Arbol *padreReempl, std::string orientacionReempl, bool* estaEliminado) {

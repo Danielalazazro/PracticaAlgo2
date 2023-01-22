@@ -10,9 +10,9 @@ int main() {
     arbol->agregar("queca",6);
     arbol->agregar("quiko",8);
     arbol->inorder();
-    //arbol->eliminar("mago");
-    //arbol->eliminar("pepe");
-    //arbol->eliminar("lolo");
+    arbol->eliminar("mago");
+    arbol->eliminar("pepe");
+    arbol->eliminar("lolo");
     arbol->inorder();
     arbol->destruirArbol();
     delete arbol;

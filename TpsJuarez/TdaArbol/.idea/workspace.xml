@@ -59,7 +59,8 @@
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
   }
 }]]></component>
   <component name="RunManager">
@@ -86,7 +87,7 @@
       <workItem from="1674273732139" duration="3863000" />
       <workItem from="1674328142430" duration="2605000" />
       <workItem from="1674332869728" duration="1391000" />
-      <workItem from="1674334737050" duration="1000" />
+      <workItem from="1674334737050" duration="6359000" />
     </task>
     <servers />
   </component>
@@ -109,12 +110,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Arbol.h</url>
-          <line>198</line>
+          <line>190</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Arbol.h</url>
-          <line>211</line>
+          <line>203</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
